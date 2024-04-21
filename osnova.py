@@ -17,9 +17,11 @@ def render_map():
     results = cursor.fetchall()
     geolocator = Nominatim(user_agent="coordinates_finder")
     a =[]
+    
     for i in range(len(results)):
         location = geolocator.geocode(results[i][5])
         a.append([results[i][0:5], [location.latitude, location.longitude]])
+        
     return render_template('map.html', b = a)
     
 	
