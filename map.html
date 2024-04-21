@@ -35,10 +35,10 @@ function addInfoBubble(map) {
   }, false);
 
 	{% for i in b %}
-           addMarkerToGroup(group, {lat:{{i[0]}}, lng:{{i[1]}}},
-  	  '<div>Our arrival at SPB...</div>' +
-    	'</div><img width=200 height=200 src="https://img.freepik.com/premium-vector/mafia-logo_74829-29.jpg?w=2000"></img></div>');
-       {% endfor %}
+           addMarkerToGroup(group, {lat:{{i[1][0]}}, lng:{{i[1][1]}}},
+  	  '<div>{{i[0][1]}}<br/>{{i[0][0]}}<br/>{{i[0][2]}}<br/> Собрано 0/{{i[0][3]}}</div>' +
+    	'</div><img width=200 height=200 src="{{i[0][4]}}"></img></div>');
+  	{% endfor %}
 
 }
 
